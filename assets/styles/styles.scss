@@ -7,9 +7,14 @@ $light-gray: #EBF0EE;
 $dark: #172b4d;
 $white: #fff;
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Inter', sans-serif;
   color: $dark;
+  position: relative;
 }
 
 a {
@@ -38,7 +43,8 @@ h4 {
   margin: 16px;
 }
 
-button {
+button,
+.button {
   padding: 12px;
   background-color: $primary-color;
   color: $white;
@@ -69,36 +75,53 @@ button {
 .bg-icon {
   position: absolute;
   z-index: -1;
+
+  @media only screen and (max-width: 786px) {
+    opacity: 0.5;
+  }
 }
 
 .landing-section {
   position: relative;
-  height: 100vh;
+  height: 95vh;
   text-align: center;
+  
+  @media only screen and (max-width: 786px) {
+    height: auto;
+  }
 
   .navbar {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
     height: 72px;
-    font-size: 15px;
+    font-size: 20px;
     font-weight: 600;
     line-height: 20px;
+    background-color: $white;
+    border-bottom: 3px solid $secondary-color;
+    z-index: 1;
+    
+    li {
+      flex-wrap: wrap;
+      margin: 0 16px;
+    }
   }
   
-  .navbar li {
-    flex-wrap: wrap;
-    margin: 0 8px;
-  }
 
   .headline {
     max-width: 920px;
     width: 60%;
-    margin: 160px auto 0 auto;
+    margin: 0 auto 0 auto;
+    padding-top: 232px;
     z-index: 1;
 
     @media only screen and (max-width: 786px) {
-      margin: 20px auto;
+      margin: 0 auto;
+      padding-top: 140px;
       width: 90%;
     }
   }
@@ -157,6 +180,24 @@ button {
     border: 1px solid $gray;
     border-radius: 50%;
   }
+  
+  .bg-icon1-1 {
+    width: 15%;
+    right: 20%;
+    bottom: 15%;
+    transform: rotate(10deg);
+
+    @media only screen and (max-width: 870px) {
+      right: 5%;
+      opacity: 0.9;
+    }
+
+    @media only screen and (max-width: 786px) {
+      bottom: 5%;
+      width: 25%;
+      right: 10%;
+    }
+  }
 
   .bg-icon1-2 {
     width: 10%;
@@ -164,42 +205,66 @@ button {
     top: 650px;
     opacity: 0.48;
     transform: rotate(100deg);
-  }
 
-  .bg-icon1-1 {
-    width: 15%;
-    right: 20%;
-    bottom: 15%;
-    transform: rotate(10deg);
+    @media only screen and (max-width: 786px) {
+      width: 10%;
+      left: 25%;
+      top: 45%;
+      opacity: 0.4;
+    }
   }
 
   .bg-icon2 {
     width: 15%;
     left: 2%;
     top: 20%;
+
+    @media only screen and (max-width: 786px) {
+      width: 20%;
+      top: 22%;
+    }
   }
 
   .bg-icon3-1 {
     width: 18%;
     right: 0;
     top: 17%;
+
+    @media only screen and (max-width: 786px) {
+      top: 20%;
+    }
   }
   
   .bg-icon3-2 {
     width: 15%;
     left: 15%;
     bottom: 17%;
+
+    @media only screen and (max-width: 870px) {
+      left: 5%;
+      opacity: 0.9;
+    }
+
+    @media only screen and (max-width: 786px) {
+      width: 20%;
+      left: 5%;
+      bottom: 13%;
+    }
   }
 
   .bg-icon4 {
     width: 20%;
     right: 15%;
-    top: 0;
+    top: 72px;
+
+    @media only screen and (max-width: 786px) {
+      width: 30%;
+    }
   }
 }
 
 .projects-section {
-  padding: 20px 0;
+  padding: 70px 0 20px 0;
 
   .grid {
     img {
@@ -207,6 +272,7 @@ button {
       width: 100%;
       height: 252px;
       object-fit: cover;
+      object-position: 0px 0px;
     }
 
     article {
@@ -256,7 +322,7 @@ button {
     
     .modal-content {
       background-color: #fefefe;
-      margin: 15% auto;
+      margin: 24px auto;
       padding: 20px;
       border: 1px solid #888;
       width: 80%;
@@ -268,15 +334,20 @@ button {
 
       img {
         width: 100%;
-        height: 616px;
+        max-height: 616px;
         object-fit: cover;
         margin-bottom: 24px;
+        object-position: 0px 0px;
       }
 
       .title-container {
         display: flex;
         justify-content: space-between;
-        align-items: flex-start;
+        align-items: center;
+        
+        @media only screen and (max-width: 786px) {
+          display: block;
+        }
         
         .links {
           display: flex;
@@ -284,6 +355,11 @@ button {
 
           button {
             margin-left: 12px;
+            
+            @media only screen and (max-width: 786px) {
+              margin-left: 0;
+              margin-right: 12px;
+            }
           }
         }
 
@@ -405,12 +481,23 @@ button {
     width: 15%;
     left: 0;
     top: 20%;
+    
+    @media only screen and (max-width: 786px) {
+      top: 30%;
+      width: 30%;
+      left: -40px;
+    }
   }
 
   .bg-icon6 {
     width: 16%;
     right: 0;
     top: 0%;
+
+    @media only screen and (max-width: 786px) {
+      width: 30%;
+      right: -40px;
+    }
   }
 }
 
@@ -427,7 +514,7 @@ button {
 
     @media only screen and (max-width: 786px) {
       display: block;
-      margin-bottom: 24px;
+      margin-bottom: 48px;
     }
   }
 
@@ -440,23 +527,27 @@ button {
     margin: 0 auto;
     margin-bottom: 60px;
     padding-right: 25px;
+
+    @media only screen and (max-width: 786px) {
+      margin-bottom: 10px;
+    }
   }
 
   form {
     flex-basis: 530px;
     padding-right: 32px;
 
-    input,
+    input[type="text"],
+    input[type="email"],
     textarea {
       font-family: 'Inter', sans-serif;
-      // max-width: 600px;
       width: 100%;
       margin: 12px 0;
       padding: 15px 16px;
       font-size: 15px;
     }
 
-    button {
+    .button {
       margin-top: 12px;
     }
   }
@@ -464,10 +555,16 @@ button {
   .bg-icon7 {
     left: 0;
     width: 12%;
+
     @media only screen and (max-width: 1400px) {
       top: -100px;
       left: 0;
       width: 7%;
+    }
+
+    @media only screen and (max-width: 786px) {
+      top: -50px;
+      width: 30%;
     }
   }
 
@@ -483,6 +580,7 @@ button {
     
     @media only screen and (max-width: 786px) {
       bottom: 0;
+      width: 30%;
     }
   }
 

@@ -66,7 +66,29 @@ close6.onclick = function () {
 }
 
 window.onclick = function (event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
+    if (event.target == modal1) {
+        modal1.style.display = "none";
+    } else if (event.target == modal2) {
+        modal2.style.display = "none";
+    } else if (event.target == modal3) {
+        modal3.style.display = "none";
+    } else if (event.target == modal4) {
+        modal4.style.display = "none";
+    } else if (event.target == modal5) {
+        modal5.style.display = "none";
+    } else if (event.target == modal6) {
+        modal6.style.display = "none";
+    } 
 }
+
+document.addEventListener('keydown', function(e) {
+    let keyCode = e.keyCode;
+    if (keyCode === 27) {
+        modal1.style.display = "none";
+        modal2.style.display = "none";
+        modal3.style.display = "none";
+        modal4.style.display = "none";
+        modal5.style.display = "none";
+        modal6.style.display = "none";
+    }
+});
